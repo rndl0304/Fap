@@ -36,7 +36,6 @@ class Conta {
     }
   }
 }
-
 function CriarConta() {
   nome = prompt('Digite o nome');
   telefone = prompt('Digite o telefone');
@@ -45,7 +44,6 @@ function CriarConta() {
   Contas.push(new Conta(nome, telefone, dataNascimento, 1000, numeroConta));
   numeroConta++;
 }
-
 function Exibir() {
   let numconta = parseInt(prompt('Digite o numero da conta'));
   let valid = false;
@@ -60,7 +58,6 @@ function Exibir() {
   if(!valid)
     alert("Conta Invalida");
 }
-
 function Debitar() {
   conta = parseInt(prompt('Digite o numero da conta'));
   valor = parseInt(prompt('Digite o valor'));
@@ -76,7 +73,6 @@ function Debitar() {
   if(!valid)
     alert("Conta Invalida");
 }
-
 function Remover() {
   conta = parseInt(prompt('Digite o numero da conta'));
   let valid = false;
@@ -93,16 +89,63 @@ function Remover() {
   }
     alert("Conta Invalida");
 }
+function Transferir()
+{
+    let ContaOri;
+    let ContaDes;
 
+    contaOrigem = parseInt(prompt('Digite conta de origem:'));
+    // verifica se a conta ofigem e valida 
+    let valid = false;
+    Contas.forEach(conta => {
+        if(conta.Numconta == contaOrigem)
+        {
+            ContaOri = conta;
+            valid = true;
+        }
+    });
+
+    if(!valid)
+    {
+        alert("Conta Invalida!")
+        return
+    }
+
+    contaDestine = parseInt(prompt('Digite conta de destino:'));
+    // verifica se a conta destino e valida
+    Contas.forEach(conta => {
+        if(conta.Numconta == contaDestine)
+        {
+            ContaDes = conta;
+            valid = true;
+        }
+    });
+    
+    if(!valid)
+    {
+        alert("Conta Invalida!")
+        return
+    }
+
+    // pega valor
+    valor = parseInt(prompt('Digite Valor:'));
+    
+    ContaOri.Debitar(valor);
+    ContaDes.Creditar(valor);
+
+    ContaOri.Exibir();
+    ContaDes.Exibir();
+
+}
 
 </script>
 </head>
 <body>
 
 <input type="button" onclick="CriarConta()" value="Criar Conta" />
-<input type="button" onclick="" value="Transferir" />
+<input type="button" onclick="Transferir()" value="Transferir" />
 <input type="button" onclick="Exibir()" value="Exibir" />
-<input type="button" onclick="" value="Remover" />
+<input type="button" onclick="Remover()" value="Remover" />
 <input type="button" onclick="Debitar()" value="Debitar" />
 
 </body>
