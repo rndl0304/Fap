@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <style>
+        html {
+            background-color: #F6F6F6
+        }
+
+        :root {
+            --main-color: rgb(239, 6, 6);
+            --hover-color: rgb(239, 116, 97);
+            --letter-color: rgb(212, 9, 9);
+            --text-font-family: Arial, Helvetica, sans-serif;
+        }
+
+        main {
+            align-items: center;
+            min-width: 250px;
+            max-width: 600px;
+            min-height: 750px;
+            height: 750px;
+            max-height: 750px;
+            margin: 10px auto 10px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            background-color: #FFF;
+            font-family: var(--text-font-family);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content:space-between;
+        }
+
+        fieldset {
+            width: 90%;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items:flex-start;
+            align-items: center;
+            justify-content:space-between;
+            padding: 20px;
+        }
+
+        form
+        {
+            width: inherit;
+        }
+
+        section {
+            width: 80%;
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        input {
+            border: 2px solid #ddd;
+            border-radius: 20px;
+            width: 70%;
+            height: 25%;
+        }
+
+        input:focus {
+            outline: none !important;
+            border: 1px solid #ddd;
+        }
+
+        legend {
+            font-family: var(--text-font-family);
+            color: var(--letter-color);
+            font-style: italic;
+        }
+
+        .inputInRow{
+            font-family: var(--text-font-family);
+            color: var(--letter-color);
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        button {
+            width: 30%;
+            height: 30px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            color: white;
+            background-color: var(--main-color);
+        }
+
+        button:hover {
+
+            background-color: var(--hover-color);
+        }
+
+        button:focus {
+            outline: none !important;
+            background-color: var(--hover-color);
+        }
+        
+        .menu{
+            position: relative;
+            width: 100%;
+        }
+
+        header{
+            width: 100%;
+        }
+
+        h1,
+        h2,
+        h4 {
+            position: absolute;
+            font-family: var(--text-font-family);
+            color: var(--letter-color);
+            font-style: italic;
+            text-align: center;
+            font-size: 2.6em;
+            top:20px;
+            left: 35%;
+        }
+    </style>
+</head>
+
+<body>
+    <Main>
+        <header>
+            <div class="menu">
+                <h1 class="title">Restaurante</h1>
+                <img src="vinhos.jpg" alt="" width="100%" height="150px">
+            </div>
+        </header>
+
+        <fieldset>
+            <legend>Informação do Usuário</legend>
+            <form name="dadosusuario">
+                <div class="inputInRow">
+                    <label name="nome" id="nome"> Nome: </label>
+                    <input type="text" id="nomeusuario" name="nomeusuario22">
+                </div>
+
+                <div class="inputInRow">
+                    <label name="sexo" id="sexo"> Sexo: </label>
+                    <select name="sexo" id="sexo">
+                        <option name="masculino">Masculino</option>
+                        <option name="feminino">Feminino</option>
+                        <option name="naoinformar">Prefiro não informar</option>
+                    </select>
+                </div>
+
+                <div class="inputInRow">
+                    <label name="email" id="email"> Email: </label>
+                    <input type="email" name="email"></label>
+                </div>
+
+                <div class="inputInRow">
+                    <label name="datanascimento" id="nacimento"> Data de Nascimento: </label>
+                    <input type="date" name="data">
+                </div>
+
+                <div class="inputInRow">
+                    <label name="senha" id="senha"> Digite a senha: </label>
+                    <input type="password" id="senha1" name="senha1">
+                </div>
+                <div class="inputInRow">
+                    <label name="senha" id="senha"> Repita a senha: </label>
+                    <input type="password" id="senha2" name="senha2" />
+                </div>
+
+            </form>
+        </fieldset>
+
+        <fieldset>
+            <legend>Endereço</legend>
+            <form name="endereco">
+                <div class="inputInRow">
+                    <label name="nome" id="enderecolabel"> Endereco: </label> 
+                    <input type="text" id="endereco" name="endereco" >
+                </div>
+                <div class="inputInRow">
+                    <label name="complementoendereco" id="complemento"> Complemento: </label> 
+                    <input type="text" id="complementoendereco" name="endereco" >
+                </div>
+                <div class="inputInRow">
+                    <label name="complementoendereco" id="complemento"> Nome da Rua: </label> 
+                    <input type="text" id="complementoendereco" name="endereco" >
+                </div>
+                <div class="inputInRow">
+                    <label name="complementoendereco" id="complemento"> Estado: </label> 
+                    <input type="text" id="complementoendereco" name="endereco" >
+                </div>
+                <div class="inputInRow">
+                    <label name="complementoendereco" id="complemento"> Cidade: </label> 
+                    <input type="text" id="complementoendereco" name="endereco" >
+                </div>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Pagamento</legend>
+            <form name="endereco">
+                <div class="inputInRow">
+                    <label name="nome" id="enderecolabel"> Numero do Cartão: </label> 
+                    <input type="text" id="endereco" name="endereco" >
+                </div>
+                <div class="inputInRow">
+                    <label name="datanascimento" id="nacimento"> Validade: </label>
+                    <input type="date" name="data">
+                </div>
+                <div class="inputInRow">
+                    <label name="complementoendereco" id="complemento"> Código: </label> 
+                    <input type="text" id="complementoendereco" name="endereco" >
+                </div>
+                <div class="inputInRow">
+                    <label name="complementoendereco" id="complemento"> Nome do Titular: </label> 
+                    <input type="text" id="complementoendereco" name="endereco" >
+                </div>
+            </form>
+        </fieldset>
+
+        <button id="submit" onclick="checkPassord()"> Submit </button>
+    </Main>
+</body>
+
+</html>

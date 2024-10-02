@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurante</title>
+
+    <style>
+ 
+ :root {
+            --main-color: rgb(6, 239, 72);
+            --hover-color: rgb(239, 116, 97);
+            --letter-color: rgb(9, 212, 46);
+            --text-font-family: Arial, Helvetica, sans-serif;
+        }
+
+        main {
+            min-width: 250px;
+            max-width: 600px;
+            min-height: 500px;
+            height: 500px;
+            max-height: 500px;
+            margin: 10px auto 10px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            background-color: #FFF;
+            font-family: var(--text-font-family);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        section {
+            width: 80%;
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        input {
+            border: 0px ;
+            border-radius: 20px;
+            width: 70%;
+            height: 25%;
+        }
+
+        input:focus {
+            outline: none !important;
+            border: 1px solid #ddd;
+        }
+
+        legend
+        {            
+            font-family: var(--text-font-family);
+            color: var(--letter-color);
+            font-style: italic;
+
+        }
+
+        .LoginItemContainer
+        {
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            height: 100px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        footer {
+            clear: both;
+            width: inherit;
+            margin: 0 auto;
+            font-size: 0.75em;
+            text-align: center;
+        }
+
+        .senha {
+            width: 95%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        button
+        {
+            width: 50%;
+            height: 10%;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            color: white;
+            background-color: var(--main-color);
+        }
+
+        button:hover
+        {
+            
+            background-color: var(--hover-color);
+        }
+
+        button:focus
+        {
+            outline: none !important;
+            background-color: var(--hover-color);
+        }
+
+        a
+        {
+            font-family: var(--text-font-family);
+            color: var(--letter-color);
+        }
+
+        a:hover
+        {
+            background-color: var(--hover-color);
+        }
+
+        a:focus
+        {
+            outline: none !important;
+            background-color: var(--hover-color);
+        }
+    </style> 
+
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1 class="title">Restaurante</h1>
+        </header>
+        <section>
+
+            <div class="LoginItemContainer">
+                <legend>Nome do Usuário: </legend>
+                <input type="text" id="login" name="login">
+            </div>
+
+            <div class="LoginItemContainer">
+                <legend>Digite sua Senha: </legend>
+                <input type="password" id="senha" name="senha" />
+            </div>
+
+            <button id="submit" onclick="checkPassord()"> Acessar </button>
+
+            <div class = "senha">
+                <a href="index.html">Esqueceu sua Senha?</a>
+                <a href="Crud.html">Criar Conta</a>
+                
+            </div>
+        </section>
+        <footer>Restaurante- Rua Ernesto de Paula Santos, 187 Sala 506 - Recife-PE</footer>
+    </main>
+</body>
+
+</html>
