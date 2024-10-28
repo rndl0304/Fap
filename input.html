@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Hello React!</title>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        class UserName extends React.Component {
+            constructor(props)
+            {
+                super(props);
+                this.state = {
+                    nome : "Rafael"
+                };
+            }
+
+            changeName = () => {
+                this.setState({nome: "Nunes"});
+            }
+
+            render() {
+                return (
+                    < div >
+                        <h1>
+                             Meu nome é {this.state.nome}
+                             <br/>
+                             Minha cor é {this.props.color}</h1>
+                        <button
+                        type="button"
+                        onClick={this.changeName}
+                        >Mudar nome</button>
+                        <br/>
+                        <br/>
+                        Adicione um Novo nome: <input type="text" value={this.state.nome} onChange={element => this.setState({ nome: element.target.value })} />
+                        
+                    </div >
+                );
+            }
+        }
+
+        ReactDOM.render(<UserName color = "Amarelo"/>, document.getElementById('root'))
+
+    </script>
+</body>
+
+</html>
