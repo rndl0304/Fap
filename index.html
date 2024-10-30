@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Hello React!</title>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        class Child extends React.Component {
+
+            constructor()
+            {
+                alert('Child constructor')
+                super()
+            }
+
+            render() {
+                alert('Child render')
+                return (
+                    <h1>Hello World!</h1>
+                );
+            }
+
+            componentDidMount() {
+                alert('Child componentDidMount')
+            }
+
+            componentWillMount() {
+                alert('Child componentWillMount')
+            }
+
+            
+            componentWillUnmount()
+            {
+                alert('Child componentWillUnmount')
+            }
+
+            componentWillUpdate() {
+                alert('Child componentWillUpdate')
+            }
+
+            componentDidUpdate() {
+                alert('Child componentDidUpdate')
+            }
+            
+            shouldComponentUpdate() {
+                alert('Child shouldComponentUpdate')
+                return false;
+            }
+            
+
+        }
+
+        class Header extends React.Component {
+            constructor(props) {
+                alert('Father constructor')
+                super(props);
+                this.state = {
+                    favoriteColor: "Vermelho",
+                    show : true
+                };
+            }
+
+            /*
+            static getDerivedStateFromProps(props, state) {
+                alert('getDerivedStateFromProps')
+                return {
+                    favoriteColor: props.favcol
+                };
+            }
+            */
+            
+            changeColor = () => {
+                alert('Father changeColor')
+                this.setState({ favoriteColor: "Azul" });
+            }
+
+            changeVisibilidade = () => {
+                alert('Father changeVisibilidade')
+                this.setState({ show: !this.state.show });
+            }
+
+            componentWillMount() {
+                alert('Father componentWillMount')
+            }
+
+            render() {
+                alert('Father render')
+                let MyHeader;
+
+                if(this.state.show)
+                {
+                    MyHeader = <Child/>
+                }
+
+                return (
+                    <div>
+                        {MyHeader}
+                        <h1>My favorite color is {this.state.favoriteColor}</h1>
+                        <button
+                            type="button"
+                            onClick={this.changeColor}
+                        >Mudar cor</button>
+                        <button
+                            type="button"
+                            onClick={this.changeVisibilidade}
+                        >Mudar Visibilidade</button>
+                    </div>
+                );
+            }
+
+            componentDidMount() {
+                alert('Father componentDidMount')
+            }
+            
+            shouldComponentUpdate() {
+                alert('Father shouldComponentUpdate')
+                return true;
+            }
+
+            componentWillUpdate() {
+                alert('Father componentWillUpdate')
+            }
+
+            componentDidUpdate() {
+                alert('Father componentDidUpdate')
+            }
+            
+
+        }
+
+        ReactDOM.render(<Header favcol="Amarelo" />, document.getElementById('root'))
+
+    </script>
+</body>
+
+</html>

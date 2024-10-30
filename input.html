@@ -19,6 +19,7 @@
         class UserName extends React.Component {
             constructor(props)
             {
+                alert("contrustor foi chamado");
                 super(props);
                 this.state = {
                     nome : "Rafael"
@@ -26,10 +27,26 @@
             }
 
             changeName = () => {
+                alert('changeName')
                 this.setState({nome: "Nunes"});
             }
 
+            static getDerivedStateFromProps(props, state) {
+                alert('getDerivedStateFromProps')
+                return null;
+            }
+
+            componentWillMount() {
+                alert('componentWillMount')
+            }
+
+            shouldComponentUpdate() {
+                alert('shouldComponentUpdate')
+                return true;
+            }
+
             render() {
+                alert('render')
                 return (
                     < div >
                         <h1>
@@ -47,9 +64,24 @@
                     </div >
                 );
             }
+
+            getSnapshotBeforeUpdate(prevProps, prevState)
+            {
+                alert("getSnapshotBeforeUpdate- " + prevProps.nome + " " + prevState.nome)
+            }
+
+            componentDidUpdate() {
+                alert('componentDidUpdate')
+            }
+
+            componentDidMount() {
+                alert('componentDidMount')
+            }
         }
 
-        ReactDOM.render(<UserName color = "Amarelo"/>, document.getElementById('root'))
+
+
+        ReactDOM.render(<UserName color = "Amarelo" nome = "Fernando"/>, document.getElementById('root'))
 
     </script>
 </body>
