@@ -1,0 +1,9 @@
+ATIVIDADE:
+
+1- Entenda cada etapa do código;
+
+2- Transforme o código em html em um código em react usando o DOM, conforme visto em sala de aula;
+
+3 - Acesse a url da API, veja quais dados são retornados e modifique o código para que possa mostrar todos os dados retornados.
+
+Faça melhorias visuais na página web para melhorar a visualização dos dados.
