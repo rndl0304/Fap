@@ -1,5 +1,6 @@
 import React from 'react';
 import Title from '../Components/Title';
+import Label from '../Components/Label';
 
 class SignUp extends React.Component{
     constructor(){
@@ -103,7 +104,7 @@ class SignUp extends React.Component{
           <Title title = "Cadastro"/>
           <form onSubmit={this.handleSubmit}>
             <div className='form-group'>
-              <label for="username" className='form-label fs-5 fw-bold'>USERNAME:</label>
+              <Label title = "USERNAME:" for = "username"/>
               <input
               type="text"
               name="username"
@@ -116,7 +117,7 @@ class SignUp extends React.Component{
               <div className='text-danger form-text fw-bold fs-5'>{this.state.errors.username}</div>
             </div>
             <div className='form-group'>
-              <label for="email" className='form-label fs-5 fw-bold'>EMAIL ADDRESS:</label>
+              <Label title = "EMAIL ADDRESS:" for = "email"/>
               <input
               type="text"
               name="email"
@@ -129,7 +130,7 @@ class SignUp extends React.Component{
               <div className='text-danger form-text fw-bold fs-5'>{this.state.errors.email}</div>
 
               <div className='form-group'>
-                <label for="password" className='form-label fs-5 fw-bold'>PASSWORD:</label>
+                <Label title = "PASSWORD:" for = "password"/>
                 <input 
                 type="password"
                 name="password"
@@ -143,7 +144,7 @@ class SignUp extends React.Component{
               </div>
 
               <div className='form-group'>
-                <label for="confirm-password" className='form-label fs-5 fw-bold'>CONFIRM PASSWORD:</label>
+                <Label title = "CONFIRM PASSWORD:" for = "confirm-password"/>
                 <input 
                 type="password"
                 name="confirm-password"

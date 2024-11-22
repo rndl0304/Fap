@@ -1,5 +1,6 @@
 import React from 'react';
 import Title from '../Components/Title';
+import Label from '../Components/Label';
 
 class Login extends React.Component{
     constructor(){
@@ -79,7 +80,7 @@ class Login extends React.Component{
           <Title title = "Login"/>
           <form onSubmit={this.handleSubmit}>
             <div className='form-group'>
-              <label for="username" className='form-label fs-5 fw-bold'>USERNAME:</label>
+              <Label title = "USERNAME:" for = "username"/>
               <input
               type="text"
               name="username"
@@ -94,7 +95,7 @@ class Login extends React.Component{
             <div className='form-group'>
                 
               <div className='form-group'>
-                <label for="password" className='form-label fs-5 fw-bold'>PASSWORD:</label>
+              <Label title = "PASSWORD:" for = "password"/>
                 <input 
                 type="password"
                 name="password"
