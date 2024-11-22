@@ -1,4 +1,5 @@
 import React from 'react';
+import Title from '../Components/Title';
 
 class SignUp extends React.Component{
     constructor(){
@@ -99,7 +100,7 @@ class SignUp extends React.Component{
     render(){
       return(
         <div className='container'>
-          <h1 className='text-center mb-4'>Cadastro</h1>
+          <Title title = "Cadastro"/>
           <form onSubmit={this.handleSubmit}>
             <div className='form-group'>
               <label for="username" className='form-label fs-5 fw-bold'>USERNAME:</label>

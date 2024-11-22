@@ -2,8 +2,8 @@
 import React from 'react';
 import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
 import './App.css';
-import SignUp from './Pages/SignUp.js'
-import Login from './Pages/Login.js'
+import SignUp from './Pages/SignUpPage.js'
+import Login from './Pages/LoginPage.js'
 
 function App() {
 
